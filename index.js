@@ -8,8 +8,11 @@ const portfolioRouter = require('./routes/portfolio')
 app.use(express.json())
 app.use(cors())
 
-portfolioRouter(app)
+app.get('/', (req, res) => {
+  res.json({ hello: 'portfolio' })
+})
 
+app.use('/portfolio', portfolioRouter)
 app.listen(port, () => {
   console.log(`Api listening on port ${port}`)
 })
