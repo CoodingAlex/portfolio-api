@@ -1,0 +1,22 @@
+{
+  "name": "portfolio-api",
+  "version": "1.0.0",
+  "description": "My portfolio api",
+  "main": "index.js",
+  "scripts": {
+    "dev": "DEBUG=portfolio:* nodemon src/index.js",
+    "start": "NODE_ENV=production node src/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "debug": "^4.1.1",
+    "express": "^4.17.1",
+    "mongodb": "^3.5.9"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.4"
+  }
+}
