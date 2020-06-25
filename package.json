@@ -4,8 +4,8 @@
   "description": "My portfolio api",
   "main": "index.js",
   "scripts": {
-    "dev": "DEBUG=portfolio:* nodemon src/index.js",
-    "start": "NODE_ENV=production node src/index.js"
+    "dev": "DEBUG=portfolio:* nodemon index.js",
+    "start": "NODE_ENV=production node index.js"
   },
   "author": "",
   "license": "ISC",

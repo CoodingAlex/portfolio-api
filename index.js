@@ -8,7 +8,7 @@ const portfolioRouter = require('./routes/portfolio')
 app.use(express.json())
 app.use(cors())
 
-app.get('/hola', (req, res) => {
+app.get('/', (req, res) => {
   res.json({ hello: 'portfolio' })
 })
 
