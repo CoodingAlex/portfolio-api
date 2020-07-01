@@ -5,6 +5,8 @@ const nodemailer = require('nodemailer')
 
 router.post('/send', (req, res, next) => {
   try {
+    console.log('request email');
+    
     const response = {
       name: req.body.name,
       email: req.body.email,

@@ -6,9 +6,11 @@ const portfolioService = new PortfolioService()
 
 router.get('/about', async (req, res, next) => {
   try {
+    
     const { data } = await portfolioService.getAbout()
     res.json({ data, message: 'data getted' })
   } catch (err) {
+    console.log(err)
     next(err)
   }
 })
@@ -18,6 +20,7 @@ router.get('/projects', async (req, res, next) => {
 
     res.json({ data, message: 'data getted' })
   } catch (err) {
+    console.log(err)
     next(err)
   }
 })
