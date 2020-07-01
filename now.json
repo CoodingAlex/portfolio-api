@@ -12,8 +12,6 @@
       },
       "dest": "index.js",
       "continue": true
-    },
-    { "src": "/portfolio/(.*)", "dest": "index.js" },
-    { "src": "/emails/(.*)", "dest": "index.js" }
+    }
   ]
 }
