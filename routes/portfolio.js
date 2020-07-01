@@ -54,14 +54,9 @@ router.post('/send', (req, res, next) => {
     let transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        type: 'OAuth2',
-        user: config.nodemailer.auth.user,
-        clientId: config.nodemailer.auth.clientId,
-        clientSecret: config.nodemailer.auth.clientSecret,
-        accessToken: config.nodemailer.auth.accessToken,
-        refreshToken: config.nodemailer.auth.refreshToken,
-        // user: process.env.GMAIL_ACCOUNT,
-        // pass: process.env.GMAIL_PASS
+
+        user: process.env.GMAIL_ACCOUNT,
+        pass: process.env.GMAIL_PASS
       },
     })
     
