@@ -64,7 +64,8 @@ router.post('/send', (req, res, next) => {
         pass: process.env.GMAIL_PASS
       },
     })
-
+    console.log(process.env.GMAIL_ACCOUNT,process.env.GMAIL_PASS);
+    
     transporter.sendMail(mailOptions, (err, res) => {
       if (err) {
         console.log(err)
