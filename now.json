@@ -1,5 +1,18 @@
 {
   "version": 2,
   "builds": [{ "src": "index.js", "use": "@now/node" }],
-  "routes": [{ "src": "/portfolio/(.*)", "dest": "index.js" }]
+  "routes": [
+    {
+      "src": ".*",
+      "methods": ["GET", "POST", "OPTIONS"],
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept",
+        "Access-Control-Allow-Credentials": "true"
+      },
+      "dest": "index.js",
+      "continue": true
+    },
+    { "src": "/portfolio/(.*)", "dest": "index.js" }
+  ]
 }
