@@ -49,6 +49,8 @@ router.post('/send', (req, res, next) => {
 
     res.status(201).json({message:'email recived'})
   } catch (err) {
+    console.log(err);
+    
     next(err)
   }
 })
