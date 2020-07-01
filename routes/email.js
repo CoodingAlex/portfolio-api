@@ -2,10 +2,10 @@ const express = require('express')
 const router = express.Router()
 const config = require('../config')
 const nodemailer = require('nodemailer')
+console.log(config.nodemailer.auth);
 
 router.post('/send', (req, res, next) => {
   try {
-    console.log('request email');
     
     const response = {
       name: req.body.name,
