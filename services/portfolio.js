@@ -1,13 +1,14 @@
 const MongoLib = require('../lib/Mongo')
 const db = new MongoLib()
 
-const COLLECTION = 'portfolio'
+const PROJECTS_COLLECTION = 'projects'
+const ABOUT_COLLECTION = 'about'
 
 class PortfolioService {
   async getAbout() {
     try {
-      const data = await db.find(COLLECTION, {})
-      return data[0].about
+      const data = await db.find(ABOUT_COLLECTION, {})
+      return data[0]
     } catch (err) {
       console.log(err)
 
@@ -16,9 +17,9 @@ class PortfolioService {
   }
   async getProjects() {
     try {
-      const data = await db.find(COLLECTION, {})
+      const data = await db.find(PROJECTS_COLLECTION, {})
 
-      return data[0].projects
+      return data
     } catch (err) {
       throw new Error(`Error in portfolio service`)
     }

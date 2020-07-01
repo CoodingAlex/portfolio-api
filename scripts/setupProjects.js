@@ -46,7 +46,8 @@ const about = {
 const MongoLib = require('../lib/Mongo')
 const mongo = new MongoLib()
 async function insertData() {
-  await mongo.insertOne('portfolio', { projects, about })
+  await mongo.insertMany('projects', projects)
+  await mongo.insertOne('about', about)
 }
 
 insertData()
