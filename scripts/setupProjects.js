@@ -4,6 +4,12 @@ const projects = [
     content:
       'A simple server-side-rendering ecomerce maded with express and pug',
     url: 'https://octolionstore.herokuapp.com/',
+    img: "https://res.cloudinary.com/dcoxmw8gn/image/upload/v1593045606/Captura_de_pantalla_de_2020-06-24_18-39-49_zwyunb.png",
+    tecnologies: [
+      "Express",
+      "Pug",
+      "Ssr"
+    ]
   },
   {
     title: 'Rock Paper Scissors',
@@ -12,6 +18,12 @@ const projects = [
     url: 'https://coodingalex-rock-paper-scissors.netlify.app/',
     img:
       'https://res.cloudinary.com/dcoxmw8gn/image/upload/v1593043789/Captura_de_pantalla_de_2020-06-24_18-09-07_hq6wzl.png',
+      tecnologies:[
+        "React",
+        "Socket.io",
+        "Node",
+        "Express"
+      ]
   },
   {
     title: 'Platzi-exchange',
@@ -20,7 +32,10 @@ const projects = [
     url: 'https://alex-exchange.netlify.app/',
     img:
       'https://res.cloudinary.com/dcoxmw8gn/image/upload/v1593044020/Captura_de_pantalla_de_2020-06-24_18-13-29_vbjxqf.png',
-  },
+    tecnologies:[
+      "Vue"
+    ]
+    },
   {
     title: 'alexgram',
     content:
@@ -28,6 +43,13 @@ const projects = [
     img:
       'https://res.cloudinary.com/dcoxmw8gn/image/upload/v1593044139/Captura_de_pantalla_de_2020-06-24_18-15-25_yj4yly.png',
     url: 'https://coodingalexgram-web.herokuapp.com/login',
+    tecnologies:[
+      "Express",
+      "Ssr",
+      "Passport.js",
+      "Node",
+      "Handlebars"
+    ]
   },
   {
     title: 'my blog',
@@ -36,7 +58,12 @@ const projects = [
     url: 'https://coderalexblog.netlify.app/',
     img:
       'https://res.cloudinary.com/dcoxmw8gn/image/upload/v1593044237/Captura_de_pantalla_de_2020-06-24_18-17-07_quivty.png',
-  },
+    tecnologies:[
+      "Express",
+      "React",
+      "Node"
+    ]
+    },
 ]
 
 const about = {
@@ -46,8 +73,16 @@ const about = {
 const MongoLib = require('../lib/Mongo')
 const mongo = new MongoLib()
 async function insertData() {
-  await mongo.insertMany('projects', projects)
-  await mongo.insertOne('about', about)
+  try{
+    await mongo.insertMany('projects', projects)
+    await mongo.insertOne('about', about)
+    console.log('Succesfull')
+    process.exit(0)
+    
+  }catch(err){
+    process.exit(1)
+
+  }
 }
 
 insertData()
