@@ -1,12 +1,10 @@
-const express = require('express')
+const express = require("express")
 const router = express.Router()
-const config = require('../config')
-const nodemailer = require('nodemailer')
-console.log(config.nodemailer.auth);
+const config = require("../config")
+const nodemailer = require("nodemailer")
 
-router.post('/send', (req, res, next) => {
+router.post("/send", (req, res, next) => {
   try {
-    
     const response = {
       name: req.body.name,
       email: req.body.email,
@@ -16,21 +14,21 @@ router.post('/send', (req, res, next) => {
     let mailOptions = {
       from: req.body.name,
       to: config.nodemailer.auth.user,
-      subject: 'Your Portfolio App Got a Message Open It!',
+      subject: "Your Portfolio App Got a Message Open It!",
       text: req.body.message,
       html:
-        'Message from: ' +
+        "Message from: " +
         req.body.name +
-        '<br></br> Email: ' +
+        "<br></br> Email: " +
         req.body.email +
-        '<br></br> Message: ' +
+        "<br></br> Message: " +
         req.body.message,
     }
 
     let transporter = nodemailer.createTransport({
-      service: 'gmail',
+      service: "gmail",
       auth: {
-        type: 'OAuth2',
+        type: "OAuth2",
         user: config.nodemailer.auth.user,
         clientId: config.nodemailer.auth.clientId,
         clientSecret: config.nodemailer.auth.clientSecret,
@@ -44,13 +42,12 @@ router.post('/send', (req, res, next) => {
         console.log(err)
         return next(err)
       }
-      console.log(JSON.stringify(res))
     })
 
-    res.status(201).json({message:'email recived'})
+    res.status(201).json({ message: "email recived" })
   } catch (err) {
-    console.log(err);
-    
+    console.log(err)
+
     next(err)
   }
 })
