@@ -28,7 +28,10 @@ router.post(
     }
   }
 )
-router.post("/sign-out", (req, res, next) => {})
+router.post("/sign-out", (req, res, next) => {
+  res.clearCookie("token")
+  res.status(200).json({ message: "logout" })
+})
 router.post("/sign-verify", (req, res, next) => {})
 
 module.exports = router
