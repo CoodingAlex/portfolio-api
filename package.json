@@ -10,12 +10,18 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.0.0",
+    "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "debug": "^4.1.1",
     "express": "^4.17.1",
     "googleapis": "^39.2.0",
+    "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.5.9",
     "nodemailer": "^6.4.10",
+    "passport": "^0.4.1",
+    "passport-http": "^0.3.0",
+    "passport-jwt": "^4.0.0",
     "xoauth2": "^1.2.0"
   },
   "devDependencies": {
