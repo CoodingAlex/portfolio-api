@@ -51,6 +51,7 @@ router.post(
         img: req.body.img || "",
         tecnologies: req.body.tecnologies || [],
       }
+      console.log(req.body)
       const data = await portfolioService.createProject(project)
 
       res.json({ data, message: "data getted" })
@@ -67,6 +68,8 @@ router.put(
   async (req, res, next) => {
     try {
       const { projectId } = req.params
+      console.log(req.body)
+
       const data = await portfolioService.updateProject(projectId, req.body)
 
       res.status(201).json({ data, message: "data updated" })

@@ -5,6 +5,7 @@ const passport = require("passport")
 const jwt = require("jsonwebtoken")
 
 require("../utils/auth/jwt-basic")
+require("../utils/auth/jwt-strategy")
 
 router.post(
   "/sign-in",
@@ -32,6 +33,12 @@ router.post("/sign-out", (req, res, next) => {
   res.clearCookie("token")
   res.status(200).json({ message: "logout" })
 })
-router.post("/sign-verify", (req, res, next) => {})
+router.post(
+  "/sign-verify",
+  passport.authenticate("jwt", { session: false }),
+  (req, res, next) => {
+    res.status(200).json({ message: "user verified" })
+  }
+)
 
 module.exports = router

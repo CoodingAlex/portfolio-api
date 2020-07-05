@@ -44,6 +44,7 @@ class PortfolioService {
       )
       return data
     } catch (err) {
+      console.log(err)
       throw new Error(`Error in portfolio service`)
     }
   }
