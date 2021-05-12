@@ -18,7 +18,7 @@
     "googleapis": "^39.2.0",
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.5.9",
-    "nodemailer": "^6.4.10",
+    "nodemailer": "^6.4.16",
     "passport": "^0.4.1",
     "passport-http": "^0.3.0",
     "passport-jwt": "^4.0.0",
